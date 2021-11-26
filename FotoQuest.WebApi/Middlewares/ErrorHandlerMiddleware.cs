@@ -1,5 +1,5 @@
-﻿using FotoQuest.WebApi.Application.Exceptions;
-using FotoQuest.WebApi.Application.Wrappers;
+﻿using FotoQuest.Application.Exceptions;
+using FotoQuest.Application.Wrappers;
 using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;

@@ -1,9 +1,8 @@
-using FotoQuest.WebApi.Application;
-using FotoQuest.WebApi.Application.Interfaces;
-using FotoQuest.WebApi.Infrastructure.Persistence;
-using FotoQuest.WebApi.Infrastructure.Shared;
+using FotoQuest.Application;
+using FotoQuest.Application.Interfaces;
+using FotoQuest.Infrastructure.Persistence;
+using FotoQuest.Infrastructure.Shared;
 using FotoQuest.WebApi.Extensions;
-//using FotoQuest.WebApi.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -28,7 +27,6 @@ namespace FotoQuest.WebApi
             services.AddControllers();
             services.AddApiVersioningExtension();
             services.AddHealthChecks();
-            //services.AddScoped<IAuthenticatedUserService, AuthenticatedUserService>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

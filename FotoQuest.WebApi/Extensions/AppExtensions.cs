@@ -11,7 +11,6 @@ namespace FotoQuest.WebApi.Extensions
             app.UseSwaggerUI(c =>
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "FotoQuest.WebApi");
-                //c.SwaggerEndpoint("/swagger/v1/swagger.json", "CleanArchitecture.CleanArchitecture.WebApi1.WebApi");
             });
         }
         public static void UseErrorHandlingMiddleware(this IApplicationBuilder app)

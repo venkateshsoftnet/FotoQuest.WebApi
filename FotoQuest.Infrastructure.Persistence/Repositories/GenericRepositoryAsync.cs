@@ -1,12 +1,11 @@
-﻿using FotoQuest.WebApi.Application.Interfaces;
-using FotoQuest.WebApi.Infrastructure.Persistence.Contexts;
+﻿using FotoQuest.Application.Interfaces;
+using FotoQuest.Infrastructure.Persistence.Contexts;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
-namespace FotoQuest.WebApi.Infrastructure.Persistence.Repository
+namespace FotoQuest.Infrastructure.Persistence.Repository
 {
     public class GenericRepositoryAsync<T> : IGenericRepositoryAsync<T> where T : class
     {
@@ -25,16 +24,6 @@ namespace FotoQuest.WebApi.Infrastructure.Persistence.Repository
         public virtual async Task<T> GetByIdAsync(Guid id)
         {
             return await _dbContext.Set<T>().FindAsync(id);
-        }
-
-        public async Task<IReadOnlyList<T>> GetPagedReponseAsync(int pageNumber, int pageSize)
-        {
-            return await _dbContext
-                .Set<T>()
-                .Skip((pageNumber - 1) * pageSize)
-                .Take(pageSize)
-                .AsNoTracking()
-                .ToListAsync();
         }
 
         public async Task<T> AddAsync(T entity)

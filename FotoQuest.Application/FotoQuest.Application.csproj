@@ -17,11 +17,7 @@
     <PackageReference Include="System.Text.Json" Version="4.7.2" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\FotoQuest.WebApi.Domain\FotoQuest.WebApi.Domain.csproj" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="DTOs\" />
-    <Folder Include="Enums\" />
+    <ProjectReference Include="..\FotoQuest.Domain\FotoQuest.Domain.csproj" />
   </ItemGroup>
 
 </Project>

@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace FotoQuest.WebApi.Application.Exceptions
+namespace FotoQuest.Application.Exceptions
 {
     public class ValidationException : Exception
     {

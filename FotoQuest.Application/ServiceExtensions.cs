@@ -1,11 +1,11 @@
 ﻿using AutoMapper;
 using FluentValidation;
-using FotoQuest.WebApi.Application.Behaviours;
+using FotoQuest.Application.Behaviours;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
 
-namespace FotoQuest.WebApi.Application
+namespace FotoQuest.Application
 {
     public static class ServiceExtensions
     {

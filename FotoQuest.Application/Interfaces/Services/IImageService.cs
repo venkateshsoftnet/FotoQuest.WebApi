@@ -1,9 +1,9 @@
-﻿using FotoQuest.WebApi.Domain.Entities;
+﻿using FotoQuest.Domain.Entities;
 using System;
 using System.IO;
 using System.Threading.Tasks;
 
-namespace FotoQuest.WebApi.Application.Interfaces.Services
+namespace FotoQuest.Application.Interfaces.Services
 {
     public interface IImageService
     {

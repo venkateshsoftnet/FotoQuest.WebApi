@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace FotoQuest.WebApi.Domain.Common
+﻿namespace FotoQuest.Domain.Common
 {
     public abstract class BaseEntity
     {

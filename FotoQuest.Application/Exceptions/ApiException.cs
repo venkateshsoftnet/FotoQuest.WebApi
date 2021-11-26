@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Globalization;
 
-namespace FotoQuest.WebApi.Application.Exceptions
+namespace FotoQuest.Application.Exceptions
 {
     public class ApiException : Exception
     {

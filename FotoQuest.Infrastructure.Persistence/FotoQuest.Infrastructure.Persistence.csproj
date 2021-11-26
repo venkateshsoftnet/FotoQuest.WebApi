@@ -20,8 +20,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\FotoQuest.WebApi.Application\FotoQuest.WebApi.Application.csproj" />
-    <ProjectReference Include="..\FotoQuest.WebApi.Domain\FotoQuest.WebApi.Domain.csproj" />
+    <ProjectReference Include="..\FotoQuest.Application\FotoQuest.Application.csproj" />
+    <ProjectReference Include="..\FotoQuest.Domain\FotoQuest.Domain.csproj" />
   </ItemGroup>
 
 </Project>

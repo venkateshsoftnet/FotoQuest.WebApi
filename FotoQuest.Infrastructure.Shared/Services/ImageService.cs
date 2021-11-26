@@ -1,12 +1,12 @@
-﻿using FotoQuest.WebApi.Application.Interfaces.Services;
-using FotoQuest.WebApi.Domain.Entities;
+﻿using FotoQuest.Application.Interfaces.Services;
+using FotoQuest.Domain.Entities;
 using ImageMagick;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 
-namespace FotoQuest.WebApi.Infrastructure.Shared.Services
+namespace FotoQuest.Infrastructure.Shared.Services
 {
     public class ImageService : IImageService
     {
@@ -31,18 +31,6 @@ namespace FotoQuest.WebApi.Infrastructure.Shared.Services
 
             return new FileData { MemoryStream = memory, ContentType = GetContentType(path), FileName = filename };
         }
-
-        //public bool Validate(ImageQueryViewModel imageQueryViewModel)
-        //{
-        //    if (imageQueryViewModel.ImageVersion == ImageVersion.Custom)
-        //    {
-        //        if (imageQueryViewModel.Width.HasValue == false || imageQueryViewModel.Height.HasValue == false)
-        //        {
-        //            return false;
-        //        }
-        //    }
-        //    return _imageHandler.IsFileAvailable(imageQueryViewModel.ImageId.Value, imageQueryViewModel.FileName);
-        //}
 
         private async Task<MemoryStream> GetFileFromFolder(Guid id, string filename, int width, int height)
         {

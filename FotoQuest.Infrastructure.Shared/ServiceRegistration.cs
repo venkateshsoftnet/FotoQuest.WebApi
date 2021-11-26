@@ -1,10 +1,10 @@
-﻿using FotoQuest.WebApi.Application.Interfaces;
-using FotoQuest.WebApi.Application.Interfaces.Services;
-using FotoQuest.WebApi.Infrastructure.Shared.Services;
+﻿using FotoQuest.Application.Interfaces;
+using FotoQuest.Application.Interfaces.Services;
+using FotoQuest.Infrastructure.Shared.Services;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace FotoQuest.WebApi.Infrastructure.Shared
+namespace FotoQuest.Infrastructure.Shared
 {
     public static class ServiceRegistration
     {

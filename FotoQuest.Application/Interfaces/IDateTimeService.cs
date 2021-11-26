@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace FotoQuest.WebApi.Application.Interfaces
+namespace FotoQuest.Application.Interfaces
 {
     public interface IDateTimeService
     {

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace FotoQuest.WebApi.Application.Interfaces
+namespace FotoQuest.Application.Interfaces
 {
     public interface IGenericRepositoryAsync<T> where T : class
     {
@@ -11,8 +11,6 @@ namespace FotoQuest.WebApi.Application.Interfaces
         Task<T> GetByIdAsync(Guid id);
 
         Task<IReadOnlyList<T>> GetAllAsync();
-
-        Task<IReadOnlyList<T>> GetPagedReponseAsync(int pageNumber, int pageSize);
 
         Task<T> AddAsync(T entity);
 

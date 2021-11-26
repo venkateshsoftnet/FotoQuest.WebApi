@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace FotoQuest.WebApi.Domain.Settings
+﻿namespace FotoQuest.Domain.Settings
 {
     public class JWTSettings
     {

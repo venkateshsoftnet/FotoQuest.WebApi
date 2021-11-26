@@ -1,14 +1,14 @@
-﻿using FotoQuest.WebApi.Application.Exceptions;
-using FotoQuest.WebApi.Application.Interfaces.Repositories;
-using FotoQuest.WebApi.Application.Interfaces.Services;
-using FotoQuest.WebApi.Application.Wrappers;
-using FotoQuest.WebApi.Domain.Entities;
+﻿using FotoQuest.Application.Exceptions;
+using FotoQuest.Application.Interfaces.Repositories;
+using FotoQuest.Application.Interfaces.Services;
+using FotoQuest.Application.Wrappers;
+using FotoQuest.Domain.Entities;
 using MediatR;
 using System;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace FotoQuest.WebApi.Application.Features.Images.Queries.GetImageById
+namespace FotoQuest.Application.Features.Images.Queries.GetImageById
 {
     public class GetImageByIdQuery : IRequest<Response<Image>>
     {

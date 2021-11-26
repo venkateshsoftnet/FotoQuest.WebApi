@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace FotoQuest.WebApi.Application.Wrappers
+namespace FotoQuest.Application.Wrappers
 {
     public class Response<T>
     {

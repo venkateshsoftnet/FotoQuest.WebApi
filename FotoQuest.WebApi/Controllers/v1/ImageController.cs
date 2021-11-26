@@ -1,5 +1,5 @@
-﻿using FotoQuest.WebApi.Application.Features.Images.Commands.SaveImage;
-using FotoQuest.WebApi.Application.Features.Images.Queries.GetImageById;
+﻿using FotoQuest.Application.Features.Images.Commands.SaveImage;
+using FotoQuest.Application.Features.Images.Queries.GetImageById;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 

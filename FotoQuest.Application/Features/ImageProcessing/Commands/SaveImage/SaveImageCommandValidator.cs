@@ -1,7 +1,7 @@
 ﻿using FluentValidation;
-using FotoQuest.WebApi.Application.Interfaces.Repositories;
+using FotoQuest.Application.Interfaces.Repositories;
 
-namespace FotoQuest.WebApi.Application.Features.Images.Commands.SaveImage
+namespace FotoQuest.Application.Features.Images.Commands.SaveImage
 {
     public class SaveImageCommandValidator : AbstractValidator<SaveImageCommand>
     {

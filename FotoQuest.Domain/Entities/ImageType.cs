@@ -1,4 +1,4 @@
-﻿namespace FotoQuest.WebApi.Domain.Entities
+﻿namespace FotoQuest.Domain.Entities
 {
     public enum ImageType
     {

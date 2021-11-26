@@ -17,7 +17,6 @@
 
   <ItemGroup>
     <Compile Remove="Controllers\v1\ImageProcessingController.cs" />
-    <Compile Remove="Services\AuthenticatedUserService.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -41,13 +40,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\FotoQuest.WebApi.Application\FotoQuest.WebApi.Application.csproj" />
-    <ProjectReference Include="..\FotoQuest.WebApi.Infrastructure.Persistence\FotoQuest.WebApi.Infrastructure.Persistence.csproj" />
-    <ProjectReference Include="..\FotoQuest.WebApi.Infrastructure.Shared\FotoQuest.WebApi.Infrastructure.Shared.csproj" />
+    <Folder Include="Images\" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Services\" />
+    <ProjectReference Include="..\FotoQuest.Application\FotoQuest.Application.csproj" />
+    <ProjectReference Include="..\FotoQuest.Infrastructure.Persistence\FotoQuest.Infrastructure.Persistence.csproj" />
+    <ProjectReference Include="..\FotoQuest.Infrastructure.Shared\FotoQuest.Infrastructure.Shared.csproj" />
   </ItemGroup>
 
 </Project>

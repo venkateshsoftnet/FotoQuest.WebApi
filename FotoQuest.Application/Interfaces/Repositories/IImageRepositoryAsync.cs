@@ -1,6 +1,6 @@
-﻿using FotoQuest.WebApi.Domain.Entities;
+﻿using FotoQuest.Domain.Entities;
 
-namespace FotoQuest.WebApi.Application.Interfaces.Repositories
+namespace FotoQuest.Application.Interfaces.Repositories
 {
     public interface IImageRepositoryAsync : IGenericRepositoryAsync<Image>
     {

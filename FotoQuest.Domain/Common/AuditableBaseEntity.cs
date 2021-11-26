@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace FotoQuest.WebApi.Domain.Common
+namespace FotoQuest.Domain.Common
 {
     public abstract class AuditableBaseEntity
     {

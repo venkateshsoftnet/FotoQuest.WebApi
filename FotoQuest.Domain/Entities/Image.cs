@@ -1,7 +1,7 @@
-﻿using FotoQuest.WebApi.Domain.Common;
+﻿using FotoQuest.Domain.Common;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace FotoQuest.WebApi.Domain.Entities
+namespace FotoQuest.Domain.Entities
 {
     public class Image : AuditableBaseEntity
     {

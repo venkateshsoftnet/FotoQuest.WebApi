@@ -1,7 +1,7 @@
-﻿using FotoQuest.WebApi.Application.Interfaces;
+﻿using FotoQuest.Application.Interfaces;
 using System;
 
-namespace FotoQuest.WebApi.Infrastructure.Shared.Services
+namespace FotoQuest.Infrastructure.Shared.Services
 {
     public class DateTimeService : IDateTimeService
     {

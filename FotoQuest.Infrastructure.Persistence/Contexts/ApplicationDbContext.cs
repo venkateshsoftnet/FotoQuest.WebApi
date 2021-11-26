@@ -1,12 +1,12 @@
-﻿using FotoQuest.WebApi.Application.Interfaces;
-using FotoQuest.WebApi.Domain.Common;
-using FotoQuest.WebApi.Domain.Entities;
+﻿using FotoQuest.Application.Interfaces;
+using FotoQuest.Domain.Common;
+using FotoQuest.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace FotoQuest.WebApi.Infrastructure.Persistence.Contexts
+namespace FotoQuest.Infrastructure.Persistence.Contexts
 {
     public class ApplicationDbContext : DbContext
     {
@@ -18,8 +18,6 @@ namespace FotoQuest.WebApi.Infrastructure.Persistence.Contexts
             ChangeTracker.QueryTrackingBehavior = QueryTrackingBehavior.NoTracking;
             _dateTime = dateTime;
         }
-        public DbSet<Product> Products { get; set; }
-
         public DbSet<Image> Images { get; set; }
 
 
