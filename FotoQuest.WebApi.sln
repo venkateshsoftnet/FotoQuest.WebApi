@@ -7,19 +7,19 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Source", "Source", "{F9C3A3
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebApi", "WebApi", "{BAD9BC9A-11BC-46E3-AB14-060084685D91}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FotoQuest.WebApi", "FotoQuest.WebApi.WebApi\FotoQuest.WebApi.csproj", "{82F6F82A-5794-43C0-A7C4-FCE5EB4102D6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FotoQuest.WebApi", "FotoQuest.WebApi\FotoQuest.WebApi.csproj", "{82F6F82A-5794-43C0-A7C4-FCE5EB4102D6}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{000DB8A5-5DB8-4B8A-AFC3-998E98A88ACC}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FotoQuest.WebApi.Application", "FotoQuest.WebApi.Application\FotoQuest.WebApi.Application.csproj", "{47546FD9-38E2-4DBB-A5C3-270CB83AF4CA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FotoQuest.Application", "FotoQuest.Application\FotoQuest.WebApi.Application.csproj", "{47546FD9-38E2-4DBB-A5C3-270CB83AF4CA}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FotoQuest.WebApi.Domain", "FotoQuest.WebApi.Domain\FotoQuest.WebApi.Domain.csproj", "{3B649A39-CB36-4FAF-A0E5-9635E52D1AA0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FotoQuest.Domain", "FotoQuest.Domain\FotoQuest.Domain.csproj", "{3B649A39-CB36-4FAF-A0E5-9635E52D1AA0}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{56E7A2FB-DA2F-4AA8-8EAA-6244B62B0DDA}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FotoQuest.WebApi.Infrastructure.Persistence", "FotoQuest.WebApi.Infrastructure.Persistence\FotoQuest.WebApi.Infrastructure.Persistence.csproj", "{5B8DD65E-BC9D-4CEC-97FC-ED069C057E3D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FotoQuest.Infrastructure.Persistence", "FotoQuest.Infrastructure.Persistence\FotoQuest.WebApi.Infrastructure.Persistence.csproj", "{5B8DD65E-BC9D-4CEC-97FC-ED069C057E3D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FotoQuest.WebApi.Infrastructure.Shared", "FotoQuest.WebApi.Infrastructure.Shared\FotoQuest.WebApi.Infrastructure.Shared.csproj", "{489B1E08-1978-4D3C-A4BF-F96E059CB86C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FotoQuest.Infrastructure.Shared", "FotoQuest.Infrastructure.Shared\FotoQuest.WebApi.Infrastructure.Shared.csproj", "{489B1E08-1978-4D3C-A4BF-F96E059CB86C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
