@@ -1,5 +1,4 @@
 ﻿using FotoQuest.Domain.Common;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace FotoQuest.Domain.Entities
 {
@@ -7,9 +6,8 @@ namespace FotoQuest.Domain.Entities
     {
         public string FileName { get; set; }
 
-        [NotMapped]
-        public string FileContent { get; set; }
+        public string ContentType { get; set; }
 
-        public string FileExtension { get; set; }
+        public string Length { get; set; }
     }
 }

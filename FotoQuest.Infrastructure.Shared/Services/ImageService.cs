@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 
@@ -8,18 +7,30 @@ using FotoQuest.Domain.Entities;
 
 using ImageMagick;
 
+using Microsoft.AspNetCore.Http;
+
 namespace FotoQuest.Infrastructure.Shared.Services
 {
     public class ImageService : IImageService
     {
-        public async Task<MemoryStream> GetFile(Guid id, string filename, ImageType imageType, int size = 0)
+        public async Task<FileDataResponse> GetImage(Guid id, string filename, ImageType imageType, int size = 0)
         {
             var imageSize = GetImageSize(imageType, size);
 
-            return await GetFileFromFileSystem(id, filename, imageSize, imageSize);
+            return await GetImageFromFileSystem(id, filename, imageSize);
         }
 
-        private async Task<FileData> GetFileStreamAsync(Guid Id, string filename)
+        public async Task SaveImage(Guid Id, IFormFile file)
+        {
+            var path = GetFilePath(Id, file.FileName);
+
+            using (var stream = new FileStream(path, FileMode.Create))
+            {
+                await file.CopyToAsync(stream);
+            }
+        }
+
+        private async Task<MemoryStream> GetMemoryStreamAsync(Guid Id, string filename)
         {
             var path = GetFilePath(Id, filename);
 
@@ -31,17 +42,21 @@ namespace FotoQuest.Infrastructure.Shared.Services
             }
             memory.Position = 0;
 
-            return new FileData { MemoryStream = memory, ContentType = GetContentType(path), FileName = filename };
+            return memory;
         }
 
-        private async Task<MemoryStream> GetFileFromFileSystem(Guid id, string filename, int width, int height)
+        private async Task<FileDataResponse> GetImageFromFileSystem(Guid id, string filename, int imageSize)
         {
-            var filedata = await GetFileStreamAsync(id, filename);
-            var responseMemoryStream = new MemoryStream();
-
-            using (var image = new MagickImage(filedata.MemoryStream))
+            var imageData = await GetMemoryStreamAsync(id, filename);
+            var fileDataResponse = new FileDataResponse
             {
-                var size = new MagickGeometry(width, height)
+                MemoryStream = new MemoryStream()
+            };
+            
+
+            using (var image = new MagickImage(imageData))
+            {
+                var size = new MagickGeometry(imageSize, imageSize)
                 {
                     // This will resize the image to a fixed size without maintaining the aspect ratio.
                     // Normally an image will be resized to fit inside the specified size.
@@ -51,10 +66,10 @@ namespace FotoQuest.Infrastructure.Shared.Services
                 image.Resize(size);
 
                 // Save the result
-                image.Write(responseMemoryStream);
+                image.Write(fileDataResponse.MemoryStream);
             }
 
-            return responseMemoryStream;
+            return fileDataResponse;
         }
 
         private int GetImageSize(ImageType imageType, int customSize)
@@ -73,24 +88,5 @@ namespace FotoQuest.Infrastructure.Shared.Services
         {
             return Path.Combine(Directory.GetCurrentDirectory(), "Images", Id.ToString() + "_" + fileName);
         }
-
-        private Dictionary<string, string> GetMimeTypes()
-        {
-            return new Dictionary<string, string>
-            {
-                {".png", "image/png"},
-                {".jpg", "image/jpeg"},
-                {".jpeg", "image/jpeg"}
-            };
-        }
-
-        private string GetContentType(string path)
-        {
-            var types = GetMimeTypes();
-            var ext = Path.GetExtension(path).ToLowerInvariant();
-
-            return types[ext];
-        }
-
     }
 }

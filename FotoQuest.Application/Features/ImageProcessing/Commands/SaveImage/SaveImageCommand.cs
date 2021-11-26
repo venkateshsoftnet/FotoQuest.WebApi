@@ -1,60 +1,63 @@
 ﻿using System;
-using System.IO;
+using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 
 using AutoMapper;
 
 using FotoQuest.Application.Interfaces.Repositories;
+using FotoQuest.Application.Interfaces.Services;
 using FotoQuest.Application.Wrappers;
 using FotoQuest.Domain.Entities;
 
 using MediatR;
 
+using Microsoft.AspNetCore.Http;
+
 namespace FotoQuest.Application.Features.Images.Commands.SaveImage
 {
-    public class SaveImageCommand : IRequest<Response<Guid>>
+    public class SaveImageCommand : IRequest<Response<SaveImageCommandResponse>>
     {
-        public string FileName { get; set; }
-
-        public string Description { get; set; }
-
-        public string FileType { get; set; }
-
-        public long FileSize { get; set; }
-
-        public string FileContent { get; set; }
+        public List<IFormFile> Files { get; set; }
     }
-    public class SaveImageCommandCommandHandler : IRequestHandler<SaveImageCommand, Response<Guid>>
+    public class SaveImageCommandCommandHandler : IRequestHandler<SaveImageCommand, Response<SaveImageCommandResponse>>
     {
         private readonly IImageRepositoryAsync _imageRepository;
+        private readonly IImageService _imageService;
         private readonly IMapper _mapper;
 
-        public SaveImageCommandCommandHandler(IImageRepositoryAsync imageRepository, IMapper mapper)
+        public SaveImageCommandCommandHandler(IImageRepositoryAsync imageRepository, IImageService imageService, IMapper mapper)
         {
             _imageRepository = imageRepository;
+            _imageService = imageService;
             _mapper = mapper;
         }
 
-        public async Task<Response<Guid>> Handle(SaveImageCommand request, CancellationToken cancellationToken)
+        public async Task<Response<SaveImageCommandResponse>> Handle(SaveImageCommand request, CancellationToken cancellationToken)
         {
-            var image = _mapper.Map<Image>(request);
-
-            try
+            var saveImageCommandResponse = new SaveImageCommandResponse
             {
+                Response = new List<ImageSaveResponse>()
+            };            
+
+            foreach (var item in request.Files)
+            {
+                var image = _mapper.Map<Image>(item);
+
                 image.Id = Guid.NewGuid();
 
-                var fileName = Path.Combine(Directory.GetCurrentDirectory(), "images", image.Id.ToString() + "_" + request.FileName);
-                File.WriteAllBytes(fileName, Convert.FromBase64String(request.FileContent));
+                await _imageService.SaveImage(image.Id, item);
 
                 await _imageRepository.AddAsync(image);
-            }
-            catch (Exception ex)
-            {
-                throw;
-            }            
 
-            return new Response<Guid>(image.Id);
+                saveImageCommandResponse.Response.Add(new ImageSaveResponse
+                {
+                    IsSuccess = true,
+                    Id = image.Id
+                });
+            }
+
+            return new Response<SaveImageCommandResponse>(saveImageCommandResponse);
         }
     }
 }

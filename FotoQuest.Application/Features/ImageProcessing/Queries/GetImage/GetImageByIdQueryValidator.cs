@@ -1,11 +1,11 @@
 ﻿using FluentValidation;
 
-using FotoQuest.Application.Features.Images.Queries.GetImageById;
 using FotoQuest.Application.Interfaces.Repositories;
+using FotoQuest.Application.Model;
 
 namespace FotoQuest.Application.Features.Products.Commands.CreateProduct
 {
-    public class GetImageByIdQueryValidator : AbstractValidator<GetImageByIdQuery>
+    public class GetImageByIdQueryValidator : AbstractValidator<GetImageRequestQuery>
     {
         private readonly IImageRepositoryAsync imageRepositoryAsync;
 
