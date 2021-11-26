@@ -1,4 +1,5 @@
 ﻿using FluentValidation;
+
 using FotoQuest.Application.Interfaces.Repositories;
 
 namespace FotoQuest.Application.Features.Images.Commands.SaveImage

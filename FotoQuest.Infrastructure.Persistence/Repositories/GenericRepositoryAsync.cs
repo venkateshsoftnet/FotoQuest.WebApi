@@ -1,9 +1,11 @@
-﻿using FotoQuest.Application.Interfaces;
-using FotoQuest.Infrastructure.Persistence.Contexts;
-using Microsoft.EntityFrameworkCore;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+
+using FotoQuest.Application.Interfaces;
+using FotoQuest.Infrastructure.Persistence.Contexts;
+
+using Microsoft.EntityFrameworkCore;
 
 namespace FotoQuest.Infrastructure.Persistence.Repository
 {

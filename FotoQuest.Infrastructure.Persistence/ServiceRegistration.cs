@@ -3,6 +3,7 @@ using FotoQuest.Application.Interfaces.Repositories;
 using FotoQuest.Infrastructure.Persistence.Contexts;
 using FotoQuest.Infrastructure.Persistence.Repositories;
 using FotoQuest.Infrastructure.Persistence.Repository;
+
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;

@@ -1,5 +1,6 @@
-﻿using FotoQuest.Application.Interfaces;
-using System;
+﻿using System;
+
+using FotoQuest.Application.Interfaces;
 
 namespace FotoQuest.Infrastructure.Shared.Services
 {

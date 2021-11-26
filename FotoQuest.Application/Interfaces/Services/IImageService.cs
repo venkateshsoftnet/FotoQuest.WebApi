@@ -1,7 +1,8 @@
-﻿using FotoQuest.Domain.Entities;
-using System;
+﻿using System;
 using System.IO;
 using System.Threading.Tasks;
+
+using FotoQuest.Domain.Entities;
 
 namespace FotoQuest.Application.Interfaces.Services
 {

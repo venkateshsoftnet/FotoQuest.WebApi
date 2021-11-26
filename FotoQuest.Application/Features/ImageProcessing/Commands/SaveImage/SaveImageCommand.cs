@@ -1,12 +1,15 @@
-﻿using AutoMapper;
-using FotoQuest.Application.Interfaces.Repositories;
-using FotoQuest.Application.Wrappers;
-using FotoQuest.Domain.Entities;
-using MediatR;
-using System;
+﻿using System;
 using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
+
+using AutoMapper;
+
+using FotoQuest.Application.Interfaces.Repositories;
+using FotoQuest.Application.Wrappers;
+using FotoQuest.Domain.Entities;
+
+using MediatR;
 
 namespace FotoQuest.Application.Features.Images.Commands.SaveImage
 {

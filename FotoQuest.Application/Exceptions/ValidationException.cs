@@ -1,6 +1,7 @@
-﻿using FluentValidation.Results;
-using System;
+﻿using System;
 using System.Collections.Generic;
+
+using FluentValidation.Results;
 
 namespace FotoQuest.Application.Exceptions
 {

@@ -1,12 +1,14 @@
-﻿using FotoQuest.Application.Exceptions;
+﻿using System;
+using System.Threading;
+using System.Threading.Tasks;
+
+using FotoQuest.Application.Exceptions;
 using FotoQuest.Application.Interfaces.Repositories;
 using FotoQuest.Application.Interfaces.Services;
 using FotoQuest.Application.Wrappers;
 using FotoQuest.Domain.Entities;
+
 using MediatR;
-using System;
-using System.Threading;
-using System.Threading.Tasks;
 
 namespace FotoQuest.Application.Features.Images.Queries.GetImageById
 {

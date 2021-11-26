@@ -1,4 +1,5 @@
 ﻿using FotoQuest.WebApi.Middlewares;
+
 using Microsoft.AspNetCore.Builder;
 
 namespace FotoQuest.WebApi.Extensions

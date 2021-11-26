@@ -1,9 +1,14 @@
-﻿using AutoMapper;
+﻿using System.Reflection;
+
+using AutoMapper;
+
 using FluentValidation;
+
 using FotoQuest.Application.Behaviours;
+
 using MediatR;
+
 using Microsoft.Extensions.DependencyInjection;
-using System.Reflection;
 
 namespace FotoQuest.Application
 {

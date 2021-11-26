@@ -1,7 +1,9 @@
-﻿using FotoQuest.Application.Features.Images.Commands.SaveImage;
+﻿using System.Threading.Tasks;
+
+using FotoQuest.Application.Features.Images.Commands.SaveImage;
 using FotoQuest.Application.Features.Images.Queries.GetImageById;
+
 using Microsoft.AspNetCore.Mvc;
-using System.Threading.Tasks;
 
 namespace FotoQuest.WebApi.Controllers.v1
 {

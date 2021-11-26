@@ -2,6 +2,7 @@
 using FotoQuest.Domain.Entities;
 using FotoQuest.Infrastructure.Persistence.Contexts;
 using FotoQuest.Infrastructure.Persistence.Repository;
+
 using Microsoft.EntityFrameworkCore;
 
 namespace FotoQuest.Infrastructure.Persistence.Repositories

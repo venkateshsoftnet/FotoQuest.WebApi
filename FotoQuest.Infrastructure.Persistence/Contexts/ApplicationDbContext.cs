@@ -1,10 +1,12 @@
-﻿using FotoQuest.Application.Interfaces;
-using FotoQuest.Domain.Common;
-using FotoQuest.Domain.Entities;
-using Microsoft.EntityFrameworkCore;
-using System.Linq;
+﻿using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+
+using FotoQuest.Application.Interfaces;
+using FotoQuest.Domain.Common;
+using FotoQuest.Domain.Entities;
+
+using Microsoft.EntityFrameworkCore;
 
 namespace FotoQuest.Infrastructure.Persistence.Contexts
 {

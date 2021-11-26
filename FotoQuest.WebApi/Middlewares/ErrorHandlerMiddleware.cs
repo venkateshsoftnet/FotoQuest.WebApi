@@ -1,11 +1,13 @@
-﻿using FotoQuest.Application.Exceptions;
-using FotoQuest.Application.Wrappers;
-using Microsoft.AspNetCore.Http;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Net;
 using System.Text.Json;
 using System.Threading.Tasks;
+
+using FotoQuest.Application.Exceptions;
+using FotoQuest.Application.Wrappers;
+
+using Microsoft.AspNetCore.Http;
 
 namespace FotoQuest.WebApi.Middlewares
 {

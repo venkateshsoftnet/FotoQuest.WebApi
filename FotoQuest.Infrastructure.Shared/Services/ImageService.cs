@@ -1,10 +1,12 @@
-﻿using FotoQuest.Application.Interfaces.Services;
-using FotoQuest.Domain.Entities;
-using ImageMagick;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
+
+using FotoQuest.Application.Interfaces.Services;
+using FotoQuest.Domain.Entities;
+
+using ImageMagick;
 
 namespace FotoQuest.Infrastructure.Shared.Services
 {
@@ -12,9 +14,9 @@ namespace FotoQuest.Infrastructure.Shared.Services
     {
         public async Task<MemoryStream> GetFile(Guid id, string filename, ImageType imageType, int size = 0)
         {
-            var imageSize = GetSize(imageType, size);
+            var imageSize = GetImageSize(imageType, size);
 
-            return await GetFileFromFolder(id, filename, imageSize, imageSize);
+            return await GetFileFromFileSystem(id, filename, imageSize, imageSize);
         }
 
         private async Task<FileData> GetFileStreamAsync(Guid Id, string filename)
@@ -32,7 +34,7 @@ namespace FotoQuest.Infrastructure.Shared.Services
             return new FileData { MemoryStream = memory, ContentType = GetContentType(path), FileName = filename };
         }
 
-        private async Task<MemoryStream> GetFileFromFolder(Guid id, string filename, int width, int height)
+        private async Task<MemoryStream> GetFileFromFileSystem(Guid id, string filename, int width, int height)
         {
             var filedata = await GetFileStreamAsync(id, filename);
             var responseMemoryStream = new MemoryStream();
@@ -55,25 +57,21 @@ namespace FotoQuest.Infrastructure.Shared.Services
             return responseMemoryStream;
         }
 
-        private int GetSize(ImageType imageType, int size)
+        private int GetImageSize(ImageType imageType, int customSize)
         {
-            var imageSizeMap = new Dictionary<ImageType, int> {
-
-                { ImageType.Thumbnail, 128},
-
-                { ImageType.Small, 512},
-
-                { ImageType.Large, 2048},
-
-                { ImageType.Custom, size}
+            return imageType switch
+            {
+                ImageType.Thumbnail => 128,
+                ImageType.Small => 512,
+                ImageType.Large => 2048,
+                ImageType.Custom => customSize,
+                _ => 0,
             };
-
-            return imageSizeMap[imageType];
         }
 
         private static string GetFilePath(Guid Id, string fileName)
         {
-            return Path.Combine(Directory.GetCurrentDirectory(), "images", Id.ToString() + "_" + fileName);
+            return Path.Combine(Directory.GetCurrentDirectory(), "Images", Id.ToString() + "_" + fileName);
         }
 
         private Dictionary<string, string> GetMimeTypes()

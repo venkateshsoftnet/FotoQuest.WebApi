@@ -1,6 +1,7 @@
 ﻿using FotoQuest.Application.Interfaces;
 using FotoQuest.Application.Interfaces.Services;
 using FotoQuest.Infrastructure.Shared.Services;
+
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 

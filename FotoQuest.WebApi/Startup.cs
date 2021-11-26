@@ -1,8 +1,8 @@
 using FotoQuest.Application;
-using FotoQuest.Application.Interfaces;
 using FotoQuest.Infrastructure.Persistence;
 using FotoQuest.Infrastructure.Shared;
 using FotoQuest.WebApi.Extensions;
+
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
