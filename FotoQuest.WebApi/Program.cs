@@ -1,5 +1,4 @@
 using System;
-using System.Threading.Tasks;
 
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -13,7 +12,7 @@ namespace FotoQuest.WebApi
 {
     public class Program
     {
-        public async static Task Main(string[] args)
+        public static void Main(string[] args)
         {
             //Read Configuration from appSettings
             var config = new ConfigurationBuilder()
@@ -25,24 +24,25 @@ namespace FotoQuest.WebApi
                 .ReadFrom.Configuration(config)
                 .CreateLogger();
             var host = CreateHostBuilder(args).Build();
-            using (var scope = host.Services.CreateScope())
-            {
-                var services = scope.ServiceProvider;
-                var loggerFactory = services.GetRequiredService<ILoggerFactory>();
-                try
-                {
-                    Log.Information("Finished Seeding Default Data");
-                    Log.Information("Application Starting");
-                }
-                catch (Exception ex)
-                {
-                    Log.Warning(ex, "An error occurred seeding the DB");
-                }
-                finally
-                {
-                    Log.CloseAndFlush();
-                }
-            }
+
+            //using (var scope = host.Services.CreateScope())
+            //{
+            //    var services = scope.ServiceProvider;
+            //    var loggerFactory = services.GetRequiredService<ILoggerFactory>();
+            //    try
+            //    {
+            //        Log.Information("Finished Seeding Default Data");
+            //        Log.Information("Application Starting");
+            //    }
+            //    catch (Exception ex)
+            //    {
+            //        Log.Warning(ex, "An error occurred seeding the DB");
+            //    }
+            //    finally
+            //    {
+            //        Log.CloseAndFlush();
+            //    }
+            //}
             host.Run();
         }
         public static IHostBuilder CreateHostBuilder(string[] args) =>

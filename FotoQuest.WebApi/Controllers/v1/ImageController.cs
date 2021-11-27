@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 using FotoQuest.Application.Features.Images.Commands.SaveImage;
@@ -29,7 +30,12 @@ namespace FotoQuest.WebApi.Controllers
 
             _logger.Log(LogLevel.Information, "End: Get Image Service");
 
-            return File(response.Data.MemoryStream, response.Data.ContentType, response.Data.FileName);
+            var imageResponse = Convert.ToBase64String(response.Data.MemoryStream.ToArray());
+           
+            return Ok(imageResponse);
+
+            // OR
+            //return File(response.Data.MemoryStream, response.Data.ContentType, response.Data.FileName);
         }
 
         [HttpPost]

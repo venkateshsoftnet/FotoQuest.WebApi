@@ -2,12 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <Authors>Mukesh Murugan</Authors>
-    <Company>codewithmukesh</Company>
-    <RepositoryUrl>https://github.com/iammukeshm/CleanArchitecture.WebApi</RepositoryUrl>
-    <RepositoryType>Public</RepositoryType>
-    <PackageProjectUrl>https://www.codewithmukesh.com/project/aspnet-core-webapi-clean-architecture/</PackageProjectUrl>
-    <Version>1.1.0</Version>
+    <Authors>Venkatesh Thirupathi</Authors>
+    <Company>Aspire systems</Company>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -20,6 +16,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="wwwroot\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AspNetCore.HealthChecks.Uris" Version="6.0.1" />
     <PackageReference Include="FluentAssertions" Version="6.2.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.7">
       <PrivateAssets>all</PrivateAssets>
@@ -37,7 +38,6 @@
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning" Version="4.1.1" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.1.7" />
     <PackageReference Include="FluentValidation.AspNetCore" Version="9.1.2" />
-    <PackageReference Include="Swashbuckle.Core" Version="5.6.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -50,4 +50,9 @@
     <ProjectReference Include="..\FotoQuest.Infrastructure.Shared\FotoQuest.Infrastructure.Shared.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="FotoQuest.WebApi.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
 </Project>

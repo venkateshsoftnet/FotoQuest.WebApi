@@ -13,9 +13,9 @@ namespace FotoQuest.Infrastructure.Shared.Services
 {
     public class ImageService : IImageService
     {
-        public async Task<FileDataResponse> GetImage(Guid id, string filename, ImageType imageType, int size = 0)
+        public async Task<FileDataResponse> GetImage(Guid id, string filename, ImageType imageType, int customSize = 0)
         {
-            var imageSize = GetImageSize(imageType, size);
+            var imageSize = GetImageSize(imageType, customSize);
 
             return await GetImageFromFileSystem(id, filename, imageSize);
         }
@@ -32,14 +32,15 @@ namespace FotoQuest.Infrastructure.Shared.Services
 
         private async Task<MemoryStream> GetMemoryStreamAsync(Guid Id, string filename)
         {
-            var path = GetFilePath(Id, filename);
+            var filePath = GetFilePath(Id, filename);
 
             var memory = new MemoryStream();
 
-            using (var stream = new FileStream(path, FileMode.Open))
+            using (var stream = new FileStream(filePath, FileMode.Open))
             {
                 await stream.CopyToAsync(memory);
             }
+
             memory.Position = 0;
 
             return memory;
@@ -53,7 +54,6 @@ namespace FotoQuest.Infrastructure.Shared.Services
                 MemoryStream = new MemoryStream()
             };
             
-
             using (var image = new MagickImage(imageData))
             {
                 var size = new MagickGeometry(imageSize, imageSize)
@@ -86,7 +86,10 @@ namespace FotoQuest.Infrastructure.Shared.Services
 
         private static string GetFilePath(Guid Id, string fileName)
         {
-            return Path.Combine(Directory.GetCurrentDirectory(), "Images", Id.ToString() + "_" + fileName);
+            var fileExtension = System.IO.Path.GetExtension(fileName);
+            //return Path.Combine(Directory.GetCurrentDirectory(), "Images", Id.ToString() + "_" + fileName);
+
+            return Path.Combine(Directory.GetCurrentDirectory(), "Images", Id.ToString() + "" + fileExtension);
         }
     }
 }
