@@ -12,14 +12,6 @@ using MediatR;
 
 namespace FotoQuest.Application.Features.Images.Queries.GetImageById
 {
-    //public class GetImageByIdQuery : IRequest<Response<Image>>
-    //{
-    //public Guid Id { get; set; }
-
-    //public ImageType ImageType { get; set; }
-
-    //public int CustomSize { get; set; }
-
     public class GetImageByIdQueryHandler : IRequestHandler<GetImageRequestQuery, Response<FileDataResponse>>
     {
         private readonly IImageRepositoryAsync _imageRepository;
@@ -45,5 +37,4 @@ namespace FotoQuest.Application.Features.Images.Queries.GetImageById
             return new Response<FileDataResponse>(response);
         }
     }
-    //}
 }
