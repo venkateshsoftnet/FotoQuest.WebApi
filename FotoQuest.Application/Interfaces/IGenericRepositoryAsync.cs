@@ -6,8 +6,6 @@ namespace FotoQuest.Application.Interfaces
 {
     public interface IGenericRepositoryAsync<T> where T : class
     {
-        Task<T> GetByIdAsync(int id);
-
         Task<T> GetByIdAsync(Guid id);
 
         Task<IReadOnlyList<T>> GetAllAsync();

@@ -27,7 +27,7 @@ Fotoquest repo is a solution for image processing, storage and provisioning in t
 
 
 # How to run the solution:
-- Clone the repo into a folder of your choice: git clone git@github.com:venkateshsoftnet/FotoQuest.WebApi
+- Clone the repo into a folder of your choice: git clone https://github.com/venkateshsoftnet/FotoQuest.WebApi
 - Open powershell from the root folder eg: FotoQuest
 - Type "docker-compose up"
 
@@ -41,6 +41,7 @@ curl --location --request GET 'http://localhost:50445/v1/image' \
 
 # What else can be done to improve code quality
 - Authentication and authorisation can be implemented
+- Logging can be enabled for all the layers
 - Files can be stored in the cloud storage (AWS S3, Azure blob)
 - Add UI validations
 - More negative unit tests and improve code coverage 
