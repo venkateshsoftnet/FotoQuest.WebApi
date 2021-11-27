@@ -12,19 +12,14 @@ namespace FotoQuest.Application.Features.Images.Commands.SaveImage
         {
             this.imageRepository = imageRepository;
 
-            //RuleFor(p => p.FileName)
-            //    .NotEmpty().WithMessage("{PropertyName} is required.")
-            //    .NotNull()
-            //    .MaximumLength(50).WithMessage("{PropertyName} must not exceed 50 characters.");
+            RuleFor(x => x.Files)
+                .Must(x => x.Count > 0).WithMessage("Files must have a total of more than 0");
 
-            //RuleFor(p => p.FileType)
-            //    .NotEmpty().WithMessage("{PropertyName} is required.")
-            //    .NotNull()
-            //    .MaximumLength(10).WithMessage("{PropertyName} must not exceed 10 characters.");
+            RuleForEach(x => x.Files)
+                .Must(file => !string.IsNullOrEmpty(file.FileName)).WithMessage("File name is required");
 
-            //RuleFor(p => p.FileContent)
-            //   .NotEmpty().WithMessage("{PropertyName} is required.")
-            //   .NotNull();
+            RuleForEach(x => x.Files)
+                .Must(file => file.Length > 0 ).WithMessage("File content is required");
 
         }
     }

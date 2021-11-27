@@ -13,8 +13,10 @@ Fotoquest repo is a solution for image processing, storage and provisioning in t
 - Unit Tests
 
 # Endpoints
-- Swagger: http://localhost:50444/swagger/index.html
-- Health: http://localhost:50444/health
+- Swagger: http://localhost:50445/swagger/index.html
+- Fotoquest API: http://localhost:50445/v1/image/
+- Fotoquest API: https://localhost:50446/v1/image/
+- Health: http://localhost:50445/health
 
 # Documentation
 - https://docs.microsoft.com/en-us/aspnet/core/host-and-deploy/docker/visual-studio-tools-for-docker?view=aspnetcore-5.0
@@ -22,6 +24,7 @@ Fotoquest repo is a solution for image processing, storage and provisioning in t
 # Frameworks:
 - Dotnetcore 3.1
 - Docker 20.10.6
+
 
 # How to run the solution:
 - Clone the repo into a folder of your choice: git clone git@github.com:venkateshsoftnet/FotoQuest.WebApi
@@ -37,6 +40,9 @@ curl --location --request GET 'http://localhost:50445/v1/image' \
 - Type dotnet test, to run the unit tests included.
 
 # What else can be done to improve code quality
+- Authentication and authorisation can be implemented
+- Files can be stored in the cloud storage (AWS S3, Azure blob)
+- Add UI validations
 - More negative unit tests and improve code coverage 
 - Add integration tests using SpecFlow
 - Docker installation could be automated

@@ -86,9 +86,8 @@ namespace FotoQuest.Infrastructure.Shared.Services
 
         private static string GetFilePath(Guid Id, string fileName)
         {
-            var fileExtension = System.IO.Path.GetExtension(fileName);
-            //return Path.Combine(Directory.GetCurrentDirectory(), "Images", Id.ToString() + "_" + fileName);
-
+            var fileExtension = Path.GetExtension(fileName);
+            
             return Path.Combine(Directory.GetCurrentDirectory(), "Images", Id.ToString() + "" + fileExtension);
         }
     }
