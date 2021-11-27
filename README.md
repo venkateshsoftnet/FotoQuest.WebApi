@@ -14,8 +14,8 @@ Fotoquest repo is a solution for image processing, storage and provisioning in t
 
 # Endpoints
 - Swagger: http://localhost:50445/swagger/index.html
-- Fotoquest API: http://localhost:50445/v1/image/
-- Fotoquest API: https://localhost:50446/v1/image/
+- Fotoquest API: http://localhost:50445/api/v1/image/
+- Fotoquest API: https://localhost:50446/api/v1/image/
 - Health: http://localhost:50445/health
 
 # Documentation
