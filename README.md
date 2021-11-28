@@ -32,7 +32,7 @@ Fotoquest repo is a solution for image processing, storage and provisioning in t
 - Type "docker-compose up"
 
 The endpoint will be up and running. 
-curl --location --request GET 'http://localhost:50445/v1/image' \
+curl --location --request GET 'http://localhost:50445/api/v1/image' \
 --header 'Content-Type: application/json'
 
 # Running Unit Tests 
