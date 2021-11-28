@@ -88,10 +88,10 @@ namespace FotoQuest.Infrastructure.Shared.Services
         {
             var fileExtension = Path.GetExtension(fileName);
 
-            bool exists = Directory.Exists(Path.Combine(Directory.GetCurrentDirectory(), "Images"));
+            //bool exists = Directory.Exists(Path.Combine(Directory.GetCurrentDirectory(), "Images"));
 
-            if (!exists)
-                Directory.CreateDirectory(Path.Combine(Directory.GetCurrentDirectory(), "Images"));
+            //if (!exists)
+            //    Directory.CreateDirectory(Path.Combine(Directory.GetCurrentDirectory(), "Images"));
 
             return Path.Combine(Directory.GetCurrentDirectory(), "Images", Id.ToString() + "" + fileExtension);
         }

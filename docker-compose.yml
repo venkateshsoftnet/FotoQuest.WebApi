@@ -5,6 +5,13 @@ services:
     ports: 
       - "50445:80"
       - "50446:443"
+    volumes:
+      - ./Images:/app/Images:rw
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:50445/health"]
+      interval: 200s
+      timeout: 200s
+      retries: 5
   db:
     image: "mcr.microsoft.com/mssql/server:2019-latest"
     environment:

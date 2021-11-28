@@ -35,7 +35,7 @@ namespace FotoQuest.WebApi
             services.AddRouting(options => options.LowercaseUrls = true);
             services.AddControllers();
             services.AddApiVersioningExtension();
-            services.AddHealthChecks().AddUrlGroup(new Uri(_config["ApiSettings:FotoquestApiUrl"]), name: "FotoQuestApiUrl");
+            services.AddHealthChecks();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
